@@ -38,7 +38,14 @@ var elegirGeneracion = function (e) {
     template.innerHTML="";//no se repite
     var quantity = document.getElementById("cantidad");
     quantity.innerHTML="";//no se repite
-    //Cantidad alumnas//
+    var activeStudents = document.getElementById("activasAhora");
+    activeStudents.innerHTML="";//no se repite
+
+    //**Estudiantes activas**//
+    var activas = [];
+    console.log(activas);
+    
+    //**Cantidad alumnas**//
     var cantidadAlumnas = arregloStudents.length;
     console.log(cantidadAlumnas);
     var showQty = document.createElement("div");
@@ -46,7 +53,7 @@ var elegirGeneracion = function (e) {
     showQty.innerHTML='<div>' + 
     '<p>'+ "Alumnas:" +cantidadAlumnas+'</p>'+'</div>';
     quantity.appendChild(showQty);
-    var activas = [];
+
     //Iteracion//
     for (var i=0; i<arregloStudents.length; i++){
         var currentIteration = arregloStudents[i];
@@ -56,9 +63,8 @@ var elegirGeneracion = function (e) {
         console.log(studentStatus);
         if (studentStatus == true){
             activas.push(studentStatus);
-            console.log(activas);
         }
-        //Alumnas//
+        //**Alumnas**//
         var studentName = currentIteration.name;
         console.log(studentName);
         var studentPhoto = currentIteration.photo;
@@ -67,9 +73,11 @@ var elegirGeneracion = function (e) {
         cartaAlumna.setAttribute("id", "alumnas");
         cartaAlumna.innerHTML= '<div>'+ '<img src="'+studentPhoto+'" alt="">' +
         '<p>' + studentName + '</p>' +
-      '</div>';
+        '</div>';
         template.appendChild(cartaAlumna);
           };
+           //**Estudiantes activas**//
+          console.log(activas.length);
     }
 
 
