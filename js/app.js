@@ -33,6 +33,7 @@ var elegirGeneracion = function (e) {
     var generacionSelect = e.target.value;//2017-1 o 2018-1 o 2016-2
     var sede = e.target.selectedOptions[0].dataset.sede;
     var arregloStudents= data[sede][generacionSelect].students;
+    //Templates//
     var template = document.getElementById("alumnasTemplate");
     template.innerHTML="";//no se repite
     var quantity = document.getElementById("cantidad");
@@ -45,9 +46,18 @@ var elegirGeneracion = function (e) {
     showQty.innerHTML='<div>' + 
     '<p>'+ "Alumnas:" +cantidadAlumnas+'</p>'+'</div>';
     quantity.appendChild(showQty);
+    var activas = [];
+    //Iteracion//
     for (var i=0; i<arregloStudents.length; i++){
         var currentIteration = arregloStudents[i];
         console.log(currentIteration);
+        //Alumnas activas e inactivas//
+        var studentStatus = currentIteration.active;
+        console.log(studentStatus);
+        if (studentStatus == true){
+            activas.push(studentStatus);
+            console.log(activas);
+        }
         //Alumnas//
         var studentName = currentIteration.name;
         console.log(studentName);
@@ -59,8 +69,9 @@ var elegirGeneracion = function (e) {
         '<p>' + studentName + '</p>' +
       '</div>';
         template.appendChild(cartaAlumna);
+          };
     }
-}
+
 
 var select = document.getElementById("sedes"); //Declarar desde aqui donde imprimir en HTML SELECCIONAR
 var selectGen = document.getElementById("generaciones");
