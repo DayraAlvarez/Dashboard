@@ -42,6 +42,8 @@ var elegirGeneracion = function (e) {
     quantity.innerHTML="";//no se repite
     var activeStudents = document.getElementById("activasAhora");
     activeStudents.innerHTML="";//no se repite
+    var percent = document.getElementById("percent");
+    percent.innerHTML="";//no se repite
 
     //**Estudiantes activas**//
     var activas = [];
@@ -78,7 +80,6 @@ var elegirGeneracion = function (e) {
         '</div>';
         template.appendChild(cartaAlumna);
           };
-
         //**Estudiantes activas**//
         var estudiantesActivas = activas.length;
         console.log(estudiantesActivas);
@@ -88,6 +89,10 @@ var elegirGeneracion = function (e) {
         '<p>' + 'Activas:' +estudiantesActivas+ '</p>' +
         '</div>';
         activeStudents.appendChild(showActivas);
+        //**Porcentaje de estudiantes activas**//
+        var porcentaje=(estudiantesActivas * 100) / cantidadAlumnas;
+        var redondeo = Math.round(porcentaje);
+        console.log(redondeo);
     }
 
 
