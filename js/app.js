@@ -28,11 +28,13 @@ var obtenerGeneracion = function (e) {
         generations.appendChild(chooseGen);
     }
 }
+
 //Elegir generacion e imprimir alumnas//
 var elegirGeneracion = function (e) {
     var generacionSelect = e.target.value;//2017-1 o 2018-1 o 2016-2
     var sede = e.target.selectedOptions[0].dataset.sede;
     var arregloStudents= data[sede][generacionSelect].students;
+
     //Templates//
     var template = document.getElementById("alumnasTemplate");
     template.innerHTML="";//no se repite
@@ -76,8 +78,16 @@ var elegirGeneracion = function (e) {
         '</div>';
         template.appendChild(cartaAlumna);
           };
-           //**Estudiantes activas**//
-          console.log(activas.length);
+
+        //**Estudiantes activas**//
+        var estudiantesActivas = activas.length;
+        console.log(estudiantesActivas);
+        var showActivas = document.createElement("div");
+        showActivas.setAttribute("id","activas");
+        showActivas.innerHTML='<div>' +
+        '<p>' + 'Activas:' +estudiantesActivas+ '</p>' +
+        '</div>';
+        activeStudents.appendChild(showActivas);
     }
 
 
