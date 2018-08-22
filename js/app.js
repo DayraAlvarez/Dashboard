@@ -75,7 +75,7 @@ var elegirGeneracion = function (e) {
         console.log(studentPhoto);
         var cartaAlumna = document.createElement("div");
         cartaAlumna.setAttribute("id", "alumnas");
-        cartaAlumna.innerHTML= '<div>'+ '<img src="'+studentPhoto+'" alt="">' +
+        cartaAlumna.innerHTML= '<div>'+ '<img src="'+studentPhoto+'">' + '' +
         '<p>' + studentName + '</p>' +
         '</div>';
         template.appendChild(cartaAlumna);
@@ -86,13 +86,19 @@ var elegirGeneracion = function (e) {
         var showActivas = document.createElement("div");
         showActivas.setAttribute("id","activas");
         showActivas.innerHTML='<div>' +
-        '<p>' + 'Activas:' +estudiantesActivas+ '</p>' +
+        '<p>' + 'Activas: ' +estudiantesActivas+ '</p>' +
         '</div>';
         activeStudents.appendChild(showActivas);
         //**Porcentaje de estudiantes activas**//
         var porcentaje=(estudiantesActivas * 100) / cantidadAlumnas;
         var redondeo = Math.round(porcentaje);
         console.log(redondeo);
+        var showPorcentaje = document.createElement('div');
+        showPorcentaje.setAttribute("id","porcentaje");
+        showPorcentaje.innerHTML='<div>' + 
+        '<p>' + "Porcentaje: " +redondeo+ "%" + '</p>' +
+        '</div>';
+        percent.appendChild(showPorcentaje);
     }
 
 
