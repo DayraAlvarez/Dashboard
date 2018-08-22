@@ -1,5 +1,5 @@
 var data = {
-  'AQP': {
+  'Arequipa': {
     '2016-2': {
       'students': [
         {
@@ -1063,7 +1063,7 @@ var data = {
       ]
     }
   },
-  'CDMX': {
+  'Ciudad de Mexico': {
     '2017-1': {
       'students': [
         {
@@ -2415,7 +2415,7 @@ var data = {
       ]
     }
   },
-  'LIM': {
+  'Lima': {
     '2016-2': {
       'students': [
         {
@@ -3629,7 +3629,7 @@ var data = {
       ]
     }
   },
-  'SCL': {
+  'Santiago de Chile': {
     '2016-2': {
       'students': [
         {

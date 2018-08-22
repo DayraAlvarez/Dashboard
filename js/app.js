@@ -96,7 +96,7 @@ var elegirGeneracion = function (e) {
         var showPorcentaje = document.createElement('div');
         showPorcentaje.setAttribute("id","porcentaje");
         showPorcentaje.innerHTML='<div>' + 
-        '<p>' + "Porcentaje: " +redondeo+ "%" + '</p>' +
+        '<p>' + "Porcentaje de alumnas activas: " +redondeo+ "%" + '</p>' +
         '</div>';
         percent.appendChild(showPorcentaje);
     }
